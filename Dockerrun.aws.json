@@ -5,25 +5,29 @@
 			"name" : "client",
 			"image": "kothamasu/multi-client",
 			"hostname": "client",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name" : "api",
 			"image": "kothamasu/multi-server",
 			"hostname": "api",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name" : "worker",
 			"image": "kothamasu/multi-worker",
 			"hostname": "worker",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name" : "nginx",
 			"image": "kothamasu/multi-nginx",
 			"hostname": "nginx",
 			"essential": true,
+			"memory": 128
 			"portMapping":[
 				{
 					"hostPort":80,
