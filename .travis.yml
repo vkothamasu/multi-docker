@@ -14,7 +14,7 @@ after_success:
   - docker build -t kothamasu/multi-server ./server
   - docker build -t kothamasu/multi-worker ./worker
   # login to dockerhub
-  - echo "$DOCKERPWD" | login -u "$DOCKERUSER" --password_stdin
+  - echo "$DOCKERPWD" | login -u "$DOCKERUSER" --password-stdin
   
   # push the images to dockerhub
   - docker push kothamsu/multi-client
