@@ -6,14 +6,16 @@
 			"image": "kothamasu/multi-client",
 			"hostname": "client",
 			"essential": false,
-			"memory": 128
+			"memory": 128,
+			"links": ["api"]
 		},
 		{
 			"name" : "api",
 			"image": "kothamasu/multi-server",
 			"hostname": "api",
 			"essential": false,
-			"memory": 128
+			"memory": 128,
+			"links": ["client"]
 		},
 		{
 			"name" : "worker",
