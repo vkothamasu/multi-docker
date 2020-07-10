@@ -22,3 +22,16 @@ after_success:
   - docker push kothamasu/multi-nginx
   - docker push kothamasu/multi-server
   - docker push kothamasu/multi-worker
+  
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "MultiDocker-env"
+  env: "MultidockerEnv-env"
+  bucket_name: "elasticbeanstalk-us-east-2-873302939557"
+  bucket_path: "MultiDocker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

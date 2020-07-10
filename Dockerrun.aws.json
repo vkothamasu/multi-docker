@@ -1,0 +1,37 @@
+{
+	"AWSEBDockerrunVersion": 2,
+	"containerDefiitions":[
+		{
+			"name" : "client",
+			"image": "kothamasu/multi-client",
+			"hostname": "client",
+			"essential": false
+		},
+		{
+			"name" : "api",
+			"image": "kothamasu/multi-server",
+			"hostname": "api",
+			"essential": false
+		},
+		{
+			"name" : "worker",
+			"image": "kothamasu/multi-worker",
+			"hostname": "worker",
+			"essential": false
+		},
+		{
+			"name" : "nginx",
+			"image": "kothamasu/multi-nginx",
+			"hostname": "nginx",
+			"essential": true,
+			"portMapping":[
+				{
+					"hostPort":80,
+					"containerPort":80
+				}
+			],
+			"links": ["client", "api"]
+		}
+	]
+
+}
