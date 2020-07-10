@@ -13,12 +13,12 @@ after_success:
   - docker build -t kothamasu/multi-nginx ./nginx
   - docker build -t kothamasu/multi-server ./server
   - docker build -t kothamasu/multi-worker ./worker
+
   # login to dockerhub
-  - echo "$DOCKERPWD" | login -u "$DOCKERUSER" --password-stdin
+  - echo "$DOCKER_PASSWORD" | login -u "$DOCKER_ID" --password-stdin
   
   # push the images to dockerhub
   - docker push kothamsu/multi-client
   - docker push kothamasu/multi-nginx
   - docker push kothamasu/multi-server
   - docker push kothamasu/multi-worker
-  
