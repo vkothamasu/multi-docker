@@ -27,7 +27,7 @@
 			"image": "kothamasu/multi-nginx",
 			"hostname": "nginx",
 			"essential": true,
-			"memory": 128
+			"memory": 128,
 			"portMapping":[
 				{
 					"hostPort":80,
