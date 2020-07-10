@@ -1,6 +1,6 @@
 {
 	"AWSEBDockerrunVersion": 2,
-	"containerDefiitions":[
+	"containerDefinitions":[
 		{
 			"name" : "client",
 			"image": "kothamasu/multi-client",
